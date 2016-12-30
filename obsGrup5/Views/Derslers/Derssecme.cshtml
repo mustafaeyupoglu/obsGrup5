@@ -1,0 +1,66 @@
+﻿@model obsGrup5.Models.DersSec
+
+@{
+    Layout = null;
+}
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+
+
+@*@Html.ListBoxFor(model => model.ADId,
+  ViewBag.ADId as MultiSelectList,
+   new
+   {
+       data_placeholder = "Select Options ",
+       @class = "chosen-select form-control"
+   })*@
+<div id="deneme" style="width:50%">
+    
+    
+
+<table class="table">
+    @foreach (var item in ViewBag.ADId as MultiSelectList)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Value)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Text)
+            </td>
+
+            <td>
+             
+               @* @Ajax.ActionLink("Link name", "Action", "Controller", new AjaxOptions { LoadingElementId = "loadingId", UpdateTargetId = "MyDataTable" })*@
+            
+            @Ajax.ActionLink("Ekle",
+                   "DerssecPartial", new { adId=item.Value, adi=item.Text },
+                 new AjaxOptions
+                 {
+                     InsertionMode = InsertionMode.Replace,
+                     UpdateTargetId = "myData1",
+                     HttpMethod = "GET",
+ 
+
+                 })
+            </td>
+</tr>
+    }
+</table>
+    </div>
+
+@Ajax.ActionLink("Temizle",
+                   "DerssecPartial2",
+                 new AjaxOptions
+                 {
+                     InsertionMode = InsertionMode.Replace,
+                     UpdateTargetId = "myData1",
+                     HttpMethod = "GET",
+
+
+                 })
+
+<div id="myData1" style="width:50%"></div>
+
+ @Html.ActionLink("Kaydet", "DersKayit", new { ogrNo = Model.OgrenciNo})
+

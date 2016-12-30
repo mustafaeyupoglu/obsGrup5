@@ -1,0 +1,68 @@
+﻿@model obsGrup5.Models.Nots
+@{
+    Layout = null;
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Not</legend>
+        
+      
+        @Html.HiddenFor(model => model.AkademisyenId)
+        <div class="editor-label">
+            
+           @Html.LabelFor(model => model.DersKodu)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("DersKodu", String.Empty)
+            @Html.ValidationMessageFor(model => model.DersKodu)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.OgrenciNo)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.OgrenciNo)
+            @Html.ValidationMessageFor(model => model.OgrenciNo)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Vize)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Vize)
+            @Html.ValidationMessageFor(model => model.Vize)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Final)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Final)
+            @Html.ValidationMessageFor(model => model.Final)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.But)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.But)
+            @Html.ValidationMessageFor(model => model.But)
+        </div>
+
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index", new { id = Model.AkademisyenId })
+</div>
+
+

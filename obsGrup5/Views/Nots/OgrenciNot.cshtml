@@ -1,0 +1,94 @@
+﻿@model IEnumerable<obsGrup5.Models.Nots>
+
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/stil2.css" rel="stylesheet" />
+    <title>Notlar</title>
+</head>
+<body>
+    <div id="div_5">
+        <div id="div_4">
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.OgrenciNo)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DersAdi)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DersKodu)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.YariYil)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.YilDers)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Vize)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Final)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.But)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.YilNot)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.HarfNotu)
+                    </th>
+
+
+
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.OgrenciNo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DersAdi)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DersKodu)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.YariYil)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.YilDers)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Vize)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Final)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.But)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.YilNot)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.HarfNotu)
+                        </td>
+
+                    </tr>
+                }
+            </table>
+        </div>
+        </div>
+</body>
+</html>

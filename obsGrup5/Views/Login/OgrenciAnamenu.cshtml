@@ -1,0 +1,23 @@
+﻿@model obsGrup5.Ogrenci
+@{
+    ViewBag.Title = "Öğrenci AnaMenu";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ogrenci Ana Menu</title>
+    <link href="~/Content/stil3.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="three">
+        <h2>OgrenciAnamenu</h2>
+        <h1>@Html.ActionLink("DersSec", "Derssecme", "Derslers", new { ogrNo = Model.OgrenciNo }, new { @id = "link1" })</h1>
+        @*@Html.DisplayFor(modelItem => Model.OgrenciNo)*@
+        <h1>@Html.ActionLink("Notlar", "OgrenciNot", "Nots", new { ogrNo = Model.OgrenciNo }, new { @id = "link2" })</h1>
+        @*@Html.DisplayFor(modelItem => Model.OgrenciNo)*@
+        <h1>@Html.ActionLink("Transkript", "Transkript", "Nots", new { ogrNo = Model.OgrenciNo }, new { @id = "link3" })</h1>
+        @*@Html.DisplayFor(modelItem => Model.OgrenciNo)*@
+    </div>
+</body>
+</html>

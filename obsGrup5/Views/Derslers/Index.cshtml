@@ -1,0 +1,82 @@
+﻿@model IEnumerable<obsGrup5.Dersler>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/stil2.css" rel="stylesheet" />
+    <title>Index</title>
+</head>
+<body>
+    
+    <div id="div_5">
+        <div id="div_4">
+            @Html.ActionLink(" ", "Create", null, new { @class = "my-class" })
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.DersAdi)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Tur)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Kredi)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AKTS)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TeoriDersSaati)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UygulamaDersSaati)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Donemler.Donem)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DersAdi)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Tur)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Kredi)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AKTS)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TeoriDersSaati)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UygulamaDersSaati)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Donemler.Donem)
+                    </td>
+                    <td>
+                        @Html.ActionLink(" ", "Edit", new { id = item.DersKodu }, new { @class = "my-class2" }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.DersKodu }) |
+                        @Html.ActionLink(" ", "Delete", new { id = item.DersKodu }, new { @id = "dlt" })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>
+</body>
+</html>

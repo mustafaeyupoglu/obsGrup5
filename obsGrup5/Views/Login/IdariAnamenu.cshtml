@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "IdariAnamenu";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Idari Menu</title>
+    <link href="~/Content/stil3.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="three">
+        <h2>IdariAnamenu</h2>
+
+        <h1>@Html.ActionLink("Dersler", "Index", "Derslers", null, new { @id = "link1" })</h1>
+        <h1>@Html.ActionLink("Ders Açma", "Dersacma", "Derslers", null, new { @id = "link2" })</h1>
+        <h1>@Html.ActionLink("Ogrenci Kayıt", "Index", "Ogrencis", null, new { @id = "link3" })</h1>
+        <h1>@Html.ActionLink("Akademisten Kayit", "Index", "DersSorumlularis", null, new { @id = "link4" })</h1>
+    </div>
+</body>
+</html>

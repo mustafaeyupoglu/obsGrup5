@@ -1,0 +1,89 @@
+﻿@model IEnumerable<obsGrup5.DersSorumlulari>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>    
+            <th>
+                @Html.DisplayNameFor(model => model.Adi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Soyadi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Unvani)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Telefonu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Maili)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OdaNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KullaniciAdi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sifre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bolum.BolumAdi)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Adi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Soyadi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Unvani)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefonu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Maili)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OdaNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KullaniciAdi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sifre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Bolum.BolumAdi)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.AkademisyenID }) |
+                @Html.ActionLink("Details", "Details", new { id=item.AkademisyenID }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.AkademisyenID })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

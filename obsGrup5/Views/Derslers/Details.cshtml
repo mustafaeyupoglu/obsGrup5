@@ -1,0 +1,82 @@
+﻿@model obsGrup5.Dersler
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>Dersler</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.DersAdi)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.DersAdi)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Tur)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Tur)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Kredi)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Kredi)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.AKTS)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.AKTS)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.TeoriDersSaati)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.TeoriDersSaati)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.UygulamaDersSaati)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.UygulamaDersSaati)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Donemler.Donem)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Donemler.Donem)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.DersKodu }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

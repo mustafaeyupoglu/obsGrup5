@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Index</title>
+    <link rel="stylesheet" href="~/Content/stil.css" type="text/css">
+</head>
+<body>
+    <div class="one">
+        Giriş Yapmak İcin Lütfen Kullanıcı Adi ve Parolanızı Giriniz
+    </div>
+    <div class="two">
+        </br>
+        <form action="/Login/Index" method="post">
+            <ul id="ul_1">
+                <li id="il_6"><b>@Html.Raw(ViewBag.mesaj)</b></li>
+                <br />
+                <li id="il_1">Kullanıcı Adı:</li>
+                <li id="il_2"><input type="text" name="kullaniciadi" /></li>
+                <br />
+                <li id="il_3">Parola:</li>
+                <li id="il_4"><input type="password" name="parola" /></li>
+                <br />
+                <li id="il_5">
+                    <input class="buton" name="buton1" type="submit" value="Giriş Yap" />
+                </li>
+            </ul>
+
+        </form>
+    </div>
+
+</body>
+</html>
+
+

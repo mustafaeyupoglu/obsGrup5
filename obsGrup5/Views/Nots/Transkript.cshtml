@@ -1,0 +1,65 @@
+﻿@model IEnumerable<obsGrup5.Models.Transkript>
+
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/stil2.css" rel="stylesheet" />
+    <title>Trankript</title>
+</head>
+<body>
+    <div id="div_5">
+        <div id="div_4">
+            <table class="table11">
+
+                @foreach (var item in Model)
+                {
+
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.OgrenciNo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DersAdi)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DersKodu)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.YariYil)
+                        </td>
+                        @*<td>
+                                @Html.DisplayFor(modelItem => item.YilDers)
+                            </td>*@
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Kredi)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AKTS)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.YilNot)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.HarfNotu)
+                        </td>
+
+                    </tr>
+
+
+
+
+                }
+
+                <tr><th colspan="11">GNO: @ViewBag.gno</th></tr>
+            </table>
+
+        </div>
+
+    </div>
+</body>
+</html>

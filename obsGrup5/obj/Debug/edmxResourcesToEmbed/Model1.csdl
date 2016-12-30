@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ObsMssqlModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="AcilanDersler">
+    <Key>
+      <PropertyRef Name="ADId" />
+    </Key>
+    <Property Name="ADId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DersKodu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DersAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AkademisyenId" Type="Int32" />
+    <Property Name="YariYil" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="YilDers" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Bolum">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="BolumAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BolumKodu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Fax" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Fakulte_id" Type="Int32" />
+    <NavigationProperty Name="Fakulte" Relationship="Self.FK_Bolum_Fakulte1" FromRole="Bolum" ToRole="Fakulte" />
+    <NavigationProperty Name="DersSorumlulari" Relationship="Self.FK_DersSorumlulari_Bolum" FromRole="Bolum" ToRole="DersSorumlulari" />
+  </EntityType>
+  <EntityType Name="Dersler">
+    <Key>
+      <PropertyRef Name="DersKodu" />
+    </Key>
+    <Property Name="DersKodu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DersAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Tur" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Kredi" Type="Int32" />
+    <Property Name="AKTS" Type="Int32" />
+    <Property Name="TeoriDersSaati" Type="Int32" />
+    <Property Name="UygulamaDersSaati" Type="Int32" />
+    <Property Name="Donem" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Donemler" Relationship="Self.FK_Dersler_Donemler" FromRole="Dersler" ToRole="Donemler" />
+  </EntityType>
+  <EntityType Name="DersSorumlulari">
+    <Key>
+      <PropertyRef Name="AkademisyenID" />
+    </Key>
+    <Property Name="AkademisyenID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Adi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Soyadi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Unvani" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Telefonu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Maili" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OdaNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BolumKodu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="KullaniciAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Bolum" Relationship="Self.FK_DersSorumlulari_Bolum" FromRole="DersSorumlulari" ToRole="Bolum" />
+  </EntityType>
+  <EntityType Name="Donemler">
+    <Key>
+      <PropertyRef Name="Donem" />
+    </Key>
+    <Property Name="Donem" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Kredi_sayisi" Type="Int32" />
+    <Property Name="Secmeli_kredi" Type="Int32" />
+    <Property Name="Zorunlu_kredi" Type="Int32" />
+    <Property Name="Toplam_ders" Type="Int32" />
+    <Property Name="Toplam_secmeli_sayisi" Type="Int32" />
+    <NavigationProperty Name="Dersler" Relationship="Self.FK_Dersler_Donemler" FromRole="Donemler" ToRole="Dersler" />
+  </EntityType>
+  <EntityType Name="EgitimPlani">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BolumAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Onay_tarihi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Donem" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BolumKodu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Fakulte">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FakulteAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FakulteKodu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Adres" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Fax" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Bolum" Relationship="Self.FK_Bolum_Fakulte1" FromRole="Fakulte" ToRole="Bolum" />
+  </EntityType>
+  <EntityType Name="Idari">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Unvan" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Adi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Soyadi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Tel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Fax" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Adres" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BolumKodu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="KullaniciAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Kayit">
+    <Key>
+      <PropertyRef Name="KayitId" />
+    </Key>
+    <Property Name="KayitId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ADId" Type="Int32" />
+    <Property Name="OgrenciNo" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Notlar">
+    <Key>
+      <PropertyRef Name="NotId" />
+    </Key>
+    <Property Name="NotId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KayitId" Type="Int32" />
+    <Property Name="Vize" Type="Int32" />
+    <Property Name="Final" Type="Int32" />
+    <Property Name="But" Type="Int32" />
+    <Property Name="YilNot" Type="Double" />
+    <Property Name="HarfNotu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OtomatikMi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Ogrenci">
+    <Key>
+      <PropertyRef Name="OgrenciNo" />
+    </Key>
+    <Property Name="OgrenciNo" Type="Int32" Nullable="false" />
+    <Property Name="Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Soyad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Cinsiyet" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DogumTarihi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Eposta" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MezunOlunanOkulPuani" Type="Double" />
+    <Property Name="AktifKayitDonemi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DanismanId" Type="Int32" />
+    <Property Name="OnayDurum" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_Bolum_Fakulte1">
+    <End Role="Fakulte" Type="Self.Fakulte" Multiplicity="0..1" />
+    <End Role="Bolum" Type="Self.Bolum" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fakulte">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Bolum">
+        <PropertyRef Name="Fakulte_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DersSorumlulari_Bolum">
+    <End Role="Bolum" Type="Self.Bolum" Multiplicity="0..1" />
+    <End Role="DersSorumlulari" Type="Self.DersSorumlulari" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bolum">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DersSorumlulari">
+        <PropertyRef Name="BolumKodu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Dersler_Donemler">
+    <End Role="Donemler" Type="Self.Donemler" Multiplicity="0..1" />
+    <End Role="Dersler" Type="Self.Dersler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Donemler">
+        <PropertyRef Name="Donem" />
+      </Principal>
+      <Dependent Role="Dersler">
+        <PropertyRef Name="Donem" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ObsMssqlEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AcilanDersler" EntityType="Self.AcilanDersler" />
+    <EntitySet Name="Bolum" EntityType="Self.Bolum" />
+    <EntitySet Name="Dersler" EntityType="Self.Dersler" />
+    <EntitySet Name="DersSorumlulari" EntityType="Self.DersSorumlulari" />
+    <EntitySet Name="Donemler" EntityType="Self.Donemler" />
+    <EntitySet Name="EgitimPlani" EntityType="Self.EgitimPlani" />
+    <EntitySet Name="Fakulte" EntityType="Self.Fakulte" />
+    <EntitySet Name="Idari" EntityType="Self.Idari" />
+    <EntitySet Name="Kayit" EntityType="Self.Kayit" />
+    <EntitySet Name="Notlar" EntityType="Self.Notlar" />
+    <EntitySet Name="Ogrenci" EntityType="Self.Ogrenci" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <AssociationSet Name="FK_Bolum_Fakulte1" Association="Self.FK_Bolum_Fakulte1">
+      <End Role="Fakulte" EntitySet="Fakulte" />
+      <End Role="Bolum" EntitySet="Bolum" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DersSorumlulari_Bolum" Association="Self.FK_DersSorumlulari_Bolum">
+      <End Role="Bolum" EntitySet="Bolum" />
+      <End Role="DersSorumlulari" EntitySet="DersSorumlulari" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Dersler_Donemler" Association="Self.FK_Dersler_Donemler">
+      <End Role="Donemler" EntitySet="Donemler" />
+      <End Role="Dersler" EntitySet="Dersler" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,109 @@
+#div_5{
+	border-radius: 15px;
+    background: #4CAF50;
+    padding: 20px; 
+    width: 97%;
+    height: 97%;
+	top:50%;
+	
+	text-align:center;
+	font-family:calibri;
+	color:white;
+	
+}
+
+#div_4{ 
+    left:400px;
+}
+table{
+	border-radius:5px;
+	border:5px solid white;
+	margin:0 auto;
+	
+}
+th{
+	border-radius:5px;
+	padding:10px;
+	border:2px solid white;
+    
+	
+}
+td{
+	
+	padding:10px 5px;
+	border-radius:5px;
+	border:2px solid white;
+}
+a.my-class{
+    
+    border-radius:5px;
+    border:2px solid white;
+    float:left;
+    padding:16px 16px 16px 16px;
+    text-decoration:none;
+    background:url("edit_add.png");
+    color:white;
+}
+a.my-class2{
+    
+    border-radius:5px;
+    border:2px solid white;
+    float:left;
+    padding:16px 16px 16px 16px;
+    text-decoration:none;
+    background:url("edit2.png");
+    color:white;
+}
+#dlt{
+    background:no-repeat;
+    
+    border-radius:5px;
+    border:2px solid white;
+    float:left;
+    padding:16px 16px 16px 16px;
+    text-decoration:none;
+    background:url("delete2.png");
+    color:white;
+    
+    left:3px;
+}
+#five{
+    background-color:white; 
+    color: #4CAF50;
+    text-align: center;
+    text-decoration:none;
+}
+
+#backing{
+    background-color:#4CAF50; 
+    text-decoration:none;
+    border: none;
+    color: white;
+	border-radius:15px;
+    padding: 7px 32px;
+    padding-bottom:10px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+#image1{
+   position:relative;
+   top:11px;
+}
+#newdiv1{
+    border-radius: 15px;
+    background: #4CAF50;
+    padding: 20px; 
+    width: 300px;
+    height: 97%;
+	position:relative;
+	top:97%;
+	left:39%;
+	text-align:center;
+	font-family:calibri;
+	color:white;
+}
+
+

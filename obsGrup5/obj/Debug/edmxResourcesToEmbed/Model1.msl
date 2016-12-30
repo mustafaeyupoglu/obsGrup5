@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ObsMssqlModelStoreContainer" CdmEntityContainer="ObsMssqlEntities">
+    <EntitySetMapping Name="AcilanDersler">
+      <EntityTypeMapping TypeName="ObsMssqlModel.AcilanDersler">
+        <MappingFragment StoreEntitySet="AcilanDersler">
+          <ScalarProperty Name="ADId" ColumnName="ADId" />
+          <ScalarProperty Name="DersKodu" ColumnName="DersKodu" />
+          <ScalarProperty Name="DersAdi" ColumnName="DersAdi" />
+          <ScalarProperty Name="AkademisyenId" ColumnName="AkademisyenId" />
+          <ScalarProperty Name="YariYil" ColumnName="YariYil" />
+          <ScalarProperty Name="YilDers" ColumnName="YilDers" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bolum">
+      <EntityTypeMapping TypeName="ObsMssqlModel.Bolum">
+        <MappingFragment StoreEntitySet="Bolum">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="BolumAdi" ColumnName="BolumAdi" />
+          <ScalarProperty Name="BolumKodu" ColumnName="BolumKodu" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Fakulte_id" ColumnName="Fakulte_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Dersler">
+      <EntityTypeMapping TypeName="ObsMssqlModel.Dersler">
+        <MappingFragment StoreEntitySet="Dersler">
+          <ScalarProperty Name="DersKodu" ColumnName="DersKodu" />
+          <ScalarProperty Name="DersAdi" ColumnName="DersAdi" />
+          <ScalarProperty Name="Tur" ColumnName="Tur" />
+          <ScalarProperty Name="Kredi" ColumnName="Kredi" />
+          <ScalarProperty Name="AKTS" ColumnName="AKTS" />
+          <ScalarProperty Name="TeoriDersSaati" ColumnName="TeoriDersSaati" />
+          <ScalarProperty Name="UygulamaDersSaati" ColumnName="UygulamaDersSaati" />
+          <ScalarProperty Name="Donem" ColumnName="Donem" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DersSorumlulari">
+      <EntityTypeMapping TypeName="ObsMssqlModel.DersSorumlulari">
+        <MappingFragment StoreEntitySet="DersSorumlulari">
+          <ScalarProperty Name="AkademisyenID" ColumnName="AkademisyenID" />
+          <ScalarProperty Name="Adi" ColumnName="Adi" />
+          <ScalarProperty Name="Soyadi" ColumnName="Soyadi" />
+          <ScalarProperty Name="Unvani" ColumnName="Unvani" />
+          <ScalarProperty Name="Telefonu" ColumnName="Telefonu" />
+          <ScalarProperty Name="Maili" ColumnName="Maili" />
+          <ScalarProperty Name="OdaNo" ColumnName="OdaNo" />
+          <ScalarProperty Name="BolumKodu" ColumnName="BolumKodu" />
+          <ScalarProperty Name="KullaniciAdi" ColumnName="KullaniciAdi" />
+          <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Donemler">
+      <EntityTypeMapping TypeName="ObsMssqlModel.Donemler">
+        <MappingFragment StoreEntitySet="Donemler">
+          <ScalarProperty Name="Donem" ColumnName="Donem" />
+          <ScalarProperty Name="Kredi_sayisi" ColumnName="Kredi_sayisi" />
+          <ScalarProperty Name="Secmeli_kredi" ColumnName="Secmeli_kredi" />
+          <ScalarProperty Name="Zorunlu_kredi" ColumnName="Zorunlu_kredi" />
+          <ScalarProperty Name="Toplam_ders" ColumnName="Toplam_ders" />
+          <ScalarProperty Name="Toplam_secmeli_sayisi" ColumnName="Toplam_secmeli_sayisi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EgitimPlani">
+      <EntityTypeMapping TypeName="ObsMssqlModel.EgitimPlani">
+        <MappingFragment StoreEntitySet="EgitimPlani">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="BolumAdi" ColumnName="BolumAdi" />
+          <ScalarProperty Name="Onay_tarihi" ColumnName="Onay_tarihi" />
+          <ScalarProperty Name="Donem" ColumnName="Donem" />
+          <ScalarProperty Name="BolumKodu" ColumnName="BolumKodu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fakulte">
+      <EntityTypeMapping TypeName="ObsMssqlModel.Fakulte">
+        <MappingFragment StoreEntitySet="Fakulte">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FakulteAdi" ColumnName="FakulteAdi" />
+          <ScalarProperty Name="FakulteKodu" ColumnName="FakulteKodu" />
+          <ScalarProperty Name="Adres" ColumnName="Adres" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Idari">
+      <EntityTypeMapping TypeName="ObsMssqlModel.Idari">
+        <MappingFragment StoreEntitySet="Idari">
+          <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+          <ScalarProperty Name="KullaniciAdi" ColumnName="KullaniciAdi" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Unvan" ColumnName="Unvan" />
+          <ScalarProperty Name="Adi" ColumnName="Adi" />
+          <ScalarProperty Name="Soyadi" ColumnName="Soyadi" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+          <ScalarProperty Name="Tel" ColumnName="Tel" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Adres" ColumnName="Adres" />
+          <ScalarProperty Name="BolumKodu" ColumnName="BolumKodu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kayit">
+      <EntityTypeMapping TypeName="ObsMssqlModel.Kayit">
+        <MappingFragment StoreEntitySet="Kayit">
+          <ScalarProperty Name="KayitId" ColumnName="KayitId" />
+          <ScalarProperty Name="ADId" ColumnName="ADId" />
+          <ScalarProperty Name="OgrenciNo" ColumnName="OgrenciNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Notlar">
+      <EntityTypeMapping TypeName="ObsMssqlModel.Notlar">
+        <MappingFragment StoreEntitySet="Notlar">
+          <ScalarProperty Name="NotId" ColumnName="NotId" />
+          <ScalarProperty Name="KayitId" ColumnName="KayitId" />
+          <ScalarProperty Name="Vize" ColumnName="Vize" />
+          <ScalarProperty Name="Final" ColumnName="Final" />
+          <ScalarProperty Name="But" ColumnName="But" />
+          <ScalarProperty Name="YilNot" ColumnName="YilNot" />
+          <ScalarProperty Name="HarfNotu" ColumnName="HarfNotu" />
+          <ScalarProperty Name="OtomatikMi" ColumnName="OtomatikMi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ogrenci">
+      <EntityTypeMapping TypeName="ObsMssqlModel.Ogrenci">
+        <MappingFragment StoreEntitySet="Ogrenci">
+          <ScalarProperty Name="OnayDurum" ColumnName="OnayDurum" />
+          <ScalarProperty Name="OgrenciNo" ColumnName="OgrenciNo" />
+          <ScalarProperty Name="Ad" ColumnName="Ad" />
+          <ScalarProperty Name="Soyad" ColumnName="Soyad" />
+          <ScalarProperty Name="Cinsiyet" ColumnName="Cinsiyet" />
+          <ScalarProperty Name="DogumTarihi" ColumnName="DogumTarihi" />
+          <ScalarProperty Name="Eposta" ColumnName="Eposta" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="MezunOlunanOkulPuani" ColumnName="MezunOlunanOkulPuani" />
+          <ScalarProperty Name="AktifKayitDonemi" ColumnName="AktifKayitDonemi" />
+          <ScalarProperty Name="DanismanId" ColumnName="DanismanId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="ObsMssqlModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,20 @@
+﻿@model obsGrup5.DersSorumlulari
+@{
+    ViewBag.Title = "AkademisyenAnamenu";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Akademiyen Menu</title>
+    <link href="~/Content/stil3.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="three">
+        <h2>AkademisyenAnamenu</h2>
+        <h1>@Html.ActionLink("Notlar", "Index", "Nots", new { id = Model.AkademisyenID }, new { @id = "link1" })</h1>
+        @Html.HiddenFor(modelItem => Model.AkademisyenID)
+        <h1>@Html.ActionLink("Onay", "Onay", "DersSorumlularis", new { id = Model.AkademisyenID }, new { @id = "link2" })</h1>
+</div>
+</body>
+</html>

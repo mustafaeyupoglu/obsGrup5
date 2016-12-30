@@ -1,0 +1,19 @@
+﻿@model IEnumerable<obsGrup5.Models.Secilen>
+
+<table>
+    <tr>
+        <th>adid</th>
+        <th>ad</th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.ADId)</td>
+            <td>@Html.DisplayFor(modelItem => item.DersAdi)</td>
+            
+    </tr>
+
+    }
+
+</table>

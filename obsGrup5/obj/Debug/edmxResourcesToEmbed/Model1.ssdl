@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ObsMssqlModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AcilanDersler">
+    <Key>
+      <PropertyRef Name="ADId" />
+    </Key>
+    <Property Name="ADId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DersKodu" Type="varchar" MaxLength="50" />
+    <Property Name="DersAdi" Type="varchar" MaxLength="50" />
+    <Property Name="AkademisyenId" Type="int" />
+    <Property Name="YariYil" Type="varchar" MaxLength="50" />
+    <Property Name="YilDers" Type="int" />
+  </EntityType>
+  <EntityType Name="Bolum">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="BolumAdi" Type="varchar" MaxLength="50" />
+    <Property Name="BolumKodu" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Telefon" Type="varchar" MaxLength="50" />
+    <Property Name="Fax" Type="varchar" MaxLength="50" />
+    <Property Name="Fakulte_id" Type="int" />
+  </EntityType>
+  <EntityType Name="Dersler">
+    <Key>
+      <PropertyRef Name="DersKodu" />
+    </Key>
+    <Property Name="DersKodu" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DersAdi" Type="varchar" MaxLength="50" />
+    <Property Name="Tur" Type="varchar" MaxLength="50" />
+    <Property Name="Kredi" Type="int" />
+    <Property Name="AKTS" Type="int" />
+    <Property Name="TeoriDersSaati" Type="int" />
+    <Property Name="UygulamaDersSaati" Type="int" />
+    <Property Name="Donem" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DersSorumlulari">
+    <Key>
+      <PropertyRef Name="AkademisyenID" />
+    </Key>
+    <Property Name="AkademisyenID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Adi" Type="varchar" MaxLength="50" />
+    <Property Name="Soyadi" Type="varchar" MaxLength="50" />
+    <Property Name="Unvani" Type="varchar" MaxLength="50" />
+    <Property Name="Telefonu" Type="varchar" MaxLength="50" />
+    <Property Name="Maili" Type="varchar" MaxLength="50" />
+    <Property Name="OdaNo" Type="varchar" MaxLength="50" />
+    <Property Name="BolumKodu" Type="varchar" MaxLength="50" />
+    <Property Name="KullaniciAdi" Type="varchar" MaxLength="50" />
+    <Property Name="Sifre" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Donemler">
+    <Key>
+      <PropertyRef Name="Donem" />
+    </Key>
+    <Property Name="Donem" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Kredi_sayisi" Type="int" />
+    <Property Name="Secmeli_kredi" Type="int" />
+    <Property Name="Zorunlu_kredi" Type="int" />
+    <Property Name="Toplam_ders" Type="int" />
+    <Property Name="Toplam_secmeli_sayisi" Type="int" />
+  </EntityType>
+  <EntityType Name="EgitimPlani">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BolumAdi" Type="varchar" MaxLength="50" />
+    <Property Name="Onay_tarihi" Type="varchar" MaxLength="50" />
+    <Property Name="Donem" Type="varchar" MaxLength="50" />
+    <Property Name="BolumKodu" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Fakulte">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FakulteAdi" Type="varchar" MaxLength="50" />
+    <Property Name="FakulteKodu" Type="varchar" MaxLength="50" />
+    <Property Name="Adres" Type="varchar" MaxLength="200" />
+    <Property Name="Fax" Type="varchar" MaxLength="50" />
+    <Property Name="Telefon" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Idari">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Unvan" Type="varchar" MaxLength="50" />
+    <Property Name="Adi" Type="varchar" MaxLength="50" />
+    <Property Name="Soyadi" Type="varchar" MaxLength="50" />
+    <Property Name="Mail" Type="varchar" MaxLength="50" />
+    <Property Name="Tel" Type="varchar" MaxLength="50" />
+    <Property Name="Fax" Type="varchar" MaxLength="50" />
+    <Property Name="Adres" Type="varchar" MaxLength="50" />
+    <Property Name="BolumKodu" Type="varchar" MaxLength="50" />
+    <Property Name="KullaniciAdi" Type="varchar" MaxLength="50" />
+    <Property Name="Sifre" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Kayit">
+    <Key>
+      <PropertyRef Name="KayitId" />
+    </Key>
+    <Property Name="KayitId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ADId" Type="int" />
+    <Property Name="OgrenciNo" Type="int" />
+  </EntityType>
+  <EntityType Name="Notlar">
+    <Key>
+      <PropertyRef Name="NotId" />
+    </Key>
+    <Property Name="NotId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KayitId" Type="int" />
+    <Property Name="Vize" Type="int" />
+    <Property Name="Final" Type="int" />
+    <Property Name="But" Type="int" />
+    <Property Name="YilNot" Type="float" />
+    <Property Name="HarfNotu" Type="varchar" MaxLength="50" />
+    <Property Name="OtomatikMi" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Ogrenci">
+    <Key>
+      <PropertyRef Name="OgrenciNo" />
+    </Key>
+    <Property Name="OgrenciNo" Type="int" Nullable="false" />
+    <Property Name="Ad" Type="varchar" MaxLength="50" />
+    <Property Name="Soyad" Type="varchar" MaxLength="50" />
+    <Property Name="Cinsiyet" Type="varchar" MaxLength="50" />
+    <Property Name="DogumTarihi" Type="varchar" MaxLength="50" />
+    <Property Name="Eposta" Type="varchar" MaxLength="50" />
+    <Property Name="Telefon" Type="varchar" MaxLength="50" />
+    <Property Name="MezunOlunanOkulPuani" Type="float" />
+    <Property Name="AktifKayitDonemi" Type="varchar" MaxLength="50" />
+    <Property Name="DanismanId" Type="int" />
+    <Property Name="OnayDurum" Type="int" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK_Bolum_Fakulte1">
+    <End Role="Fakulte" Type="Self.Fakulte" Multiplicity="0..1" />
+    <End Role="Bolum" Type="Self.Bolum" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fakulte">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Bolum">
+        <PropertyRef Name="Fakulte_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Dersler_Donemler">
+    <End Role="Donemler" Type="Self.Donemler" Multiplicity="0..1" />
+    <End Role="Dersler" Type="Self.Dersler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Donemler">
+        <PropertyRef Name="Donem" />
+      </Principal>
+      <Dependent Role="Dersler">
+        <PropertyRef Name="Donem" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DersSorumlulari_Bolum">
+    <End Role="Bolum" Type="Self.Bolum" Multiplicity="0..1" />
+    <End Role="DersSorumlulari" Type="Self.DersSorumlulari" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bolum">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DersSorumlulari">
+        <PropertyRef Name="BolumKodu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ObsMssqlModelStoreContainer">
+    <EntitySet Name="AcilanDersler" EntityType="Self.AcilanDersler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Bolum" EntityType="Self.Bolum" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Dersler" EntityType="Self.Dersler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DersSorumlulari" EntityType="Self.DersSorumlulari" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Donemler" EntityType="Self.Donemler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EgitimPlani" EntityType="Self.EgitimPlani" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Fakulte" EntityType="Self.Fakulte" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Idari" EntityType="Self.Idari" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kayit" EntityType="Self.Kayit" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Notlar" EntityType="Self.Notlar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Ogrenci" EntityType="Self.Ogrenci" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Bolum_Fakulte1" Association="Self.FK_Bolum_Fakulte1">
+      <End Role="Fakulte" EntitySet="Fakulte" />
+      <End Role="Bolum" EntitySet="Bolum" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Dersler_Donemler" Association="Self.FK_Dersler_Donemler">
+      <End Role="Donemler" EntitySet="Donemler" />
+      <End Role="Dersler" EntitySet="Dersler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DersSorumlulari_Bolum" Association="Self.FK_DersSorumlulari_Bolum">
+      <End Role="Bolum" EntitySet="Bolum" />
+      <End Role="DersSorumlulari" EntitySet="DersSorumlulari" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

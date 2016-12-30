@@ -1,0 +1,89 @@
+﻿@model IEnumerable<obsGrup5.Ogrenci>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Ad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Soyad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cinsiyet)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DogumTarihi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Eposta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Telefon)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MezunOlunanOkulPuani)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AktifKayitDonemi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DanismanId)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Soyad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cinsiyet)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DogumTarihi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Eposta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MezunOlunanOkulPuani)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AktifKayitDonemi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DanismanId)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.OgrenciNo }) |
+                @Html.ActionLink("Details", "Details", new { id=item.OgrenciNo }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.OgrenciNo })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

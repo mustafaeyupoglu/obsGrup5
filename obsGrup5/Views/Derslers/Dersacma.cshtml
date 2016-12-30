@@ -1,0 +1,46 @@
+﻿@model obsGrup5.AcilanDersler
+
+@{
+    Layout = null;
+}
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>DersAcma</legend>
+
+
+        
+        <div class="editor-label">
+
+            @Html.LabelFor(model => model.DersKodu)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("DersKodu", String.Empty)
+            @Html.ValidationMessageFor(model => model.DersKodu)
+        </div>
+
+        <div class="editor-label">
+
+            @Html.LabelFor(model => model.AkademisyenId)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("AkademisyenId", String.Empty)
+            @Html.ValidationMessageFor(model => model.AkademisyenId)
+        </div>
+
+
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "imenu", "Login")
+</div>
